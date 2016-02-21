@@ -1,0 +1,87 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+
+{default $layout = "container"}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>{ifset title}{include title|striptags} | {/ifset}skizleby.cz</title>
+	
+	<link rel="stylesheet" type="text/css" href="{$basePath}/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{$basePath}/css/basic.css">
+	<link rel="stylesheet" type="text/css" href="https://code.cdn.mozilla.net/fonts/fira.css">
+	
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+	<meta name="viewport" content="width=device-width">
+	{block head}{/block}
+</head>
+
+<body>
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="logo" n:href="Homepage:default"><img src="/images/skier1.gif" /></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="{if $presenter->name == 'Homepage'}active{/if}"><a n:href="Homepage:default">Home</a></li>
+					<li class="{if $presenter->name == 'Map'}active{/if}"><a n:href="Map:default">Mapa areálu</a></li>
+					<li class="{if $presenter->name == 'Prices'}active{/if}"><a n:href="Prices:default">Ceník</a></li>
+					<li class="{if $presenter->name == 'Webcam'}active{/if}"><a n:href="Webcam:default">Webkamera</a></li>
+					<li class="{if $presenter->name == 'Galleries'}active{/if}"><a n:href="Galleries:default">Fotogalerie</a></li>
+					<li class="{if $presenter->name == 'Skiclub'}active{/if}"><a n:href="Skiclub:default">Skiclub</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div id="page" class="{$layout}">
+		
+		<div class="msgCont">
+			<div n:foreach="$flashes as $flash" class="flash {$flash->type}">
+				<a class="fontello close" onclick="javascript:document.getElementById('msgCont').removeChild(this.parentNode)">d</a>
+				<div class="fixed">{$flash->message}</div>
+			</div>
+			{block msgCont}{/block}
+		</div>
+		
+		<div class="content {strtolower($presenter->name)}">
+			{include content}
+		</div>
+	
+	</div>
+		
+	<div id="footer">
+		<div class="container">
+			<div class="pull-left">Kontakt: tel - 723 510 041, <a href="" id="mailtoInfo"></a></div>
+			<div class="pull-right">webmaster: <a href="" id="mailtoAdmin">{* this is filled by js *}</a></div>
+			<div class="cleaner"></div>
+		</div>
+	</div>
+	
+	{block scripts}
+		<script src="{$basePath}/js/jquery-1.10.1.min.js"></script>
+		<script src="{$basePath}/js/bootstrap.min.js"></script>
+		<script src="{$basePath}/js/main.js"></script>
+		{foreach $scripts as $script}
+			{if $script['dir']}
+				<script type="text/javascript" src="{$script['dir']}{$script['name']}"></script>
+			{else}
+				<script type="text/javascript" src="{$basePath}/js/{$script['name']}"></script>
+			{/if}
+		{/foreach}
+	{/block}
+	
+</body>
+</html>

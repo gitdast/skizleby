@@ -1,0 +1,28 @@
+#
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+#
+parameters:
+	working: true
+
+php:
+	date.timezone: Europe/Prague
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: FrontModule\*Module\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+services:
+	#- App\Model\UserManager
+	#- App\Forms\SignFormFactory
+	
+	router: App\RouterFactory::createRouter
+	dibi: \DibiConnection(%database%)
+	- App\Model\UserAuthentication(@dibi)

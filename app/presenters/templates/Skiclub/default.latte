@@ -1,0 +1,25 @@
+{block title}Skiclub{/block}
+{block content}
+	
+	<div class="box">
+		<h1 class="header bggrey">Skiclub</h1>
+		<div class="padding15">
+			<h2>Dokumenty ke stažení</h2>
+			<ul>
+				<li><a href="/upload/Stanovy.doc">Stanovy klubu</a></li>
+				<li><a href="/upload/Prihlaska.doc">Nová členská přihláška</a></li>
+				<li><a href="/upload/Informace_clenske_prispevky.doc">Informace k novým přihláškám a členským příspěvkům</a></li>
+			</ul>
+		</div>
+		
+		<div class="padding15" n:if="!$user->isLoggedIn()">
+			{control loginForm}
+		</div>
+		
+		<div class="padding15" n:if="$user->isLoggedIn()">
+			<a n:href="logout" class="btn btn-primary">Odhlásit</a>
+		</div>
+	</div>
+
+
+{/block}

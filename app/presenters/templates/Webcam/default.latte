@@ -1,0 +1,18 @@
+{block title}Web-kamera{/block}
+{block content}
+	
+	<div class="box">
+		<h1 class="header bggrey">Webkamera</h1>
+		<div class="padding15">
+			<div class="date">{$latest_datetime|date:'d.m.Y'}</div>
+			<div class="thumbs">
+				<a n:foreach="$files as $img" class="thumb pointer" href="{$webcamDir . $img}"><img src="{$thumbsDir . $img}" /></a>
+			</div>
+			<div class="display">
+				<img src="{$webcamDir . reset($files)}" />
+			</div>
+			
+		</div>
+	</div>
+
+{/block}

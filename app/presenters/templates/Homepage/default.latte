@@ -1,0 +1,58 @@
+{block title}Vítejte!{/block}
+{block content}
+
+	<div class="box actual">
+		<h2 class="header">Aktuálně</h2>
+		<div class="padding15">
+			Pozor, ve <b>čtvrtek 18.února 2016 nebude areál v provozu</b>, kvůli odstávce proudu v Českých Žlebech.
+		</div>
+	</div>
+	
+	<div class="box">
+		<h1 class="header">Ski areál České Žleby
+			<div n:if='$working' class='pull-right text-success workingStatus'>v provozu.</div>
+			<div n:if='!$working' class='pull-right text-danger workingStatus'>mimo provoz.</div>
+			<div class='pull-right text-muted workingStatus'>Dnes, {$today|date:'d.m.Y'}:&nbsp;&nbsp;</div>
+			<div class="cleaner"></div>
+		</h1>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="padding15">
+					Ski areál se nachází u Českých Žlebů, nedaleko od Volar, v jedinečné přírodě Národního parku Šumava.<br/>
+					Parkování pro automobily u vleku zdarma.<br/>
+					Lyžování pro rodiny s dětmi.<br/>
+					Délka vleků 380 a 390m – kapacita 650 osob/h. Délka sjezdovek 400 až 600m.
+					<br/><br/>
+					<b>Buffet otevřen.</b> Z nabídky: gulášovka, párky, nápoje…
+					<br/><br/>
+					<b>Další služby:</b> půjčovna lyžařského vybavení, tel: 723 510 041.
+				</div>
+			</div>
+			<div class="col-md-4 map">
+				<div class="padding15">
+					<a n:href="Map:default"><img src="/images/areal_cleared.jpg" height="250" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-7">
+			<div class="box">
+				<h2 class="header">Počasí</h2>
+				<div class="padding15">
+					<iframe src="/forecast/yr.php" width="100%" height="500"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="box webcam">
+				<h2 class="header">Webcamera</h2>
+				<div class="padding15">
+					<img src="/upload/webcam/{$recentImage}" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+{/block}
