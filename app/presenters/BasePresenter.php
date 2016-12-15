@@ -3,16 +3,42 @@ namespace FrontModule;
 
 abstract class BasePresenter extends \Nette\Application\UI\Presenter{
 	public $presentername;
+	public $config = array();
 	
 	public function startup(){
 		parent::startup();
 		$this->setDefaultScripts();
+		$this->loadConfig();
 	}
 	
 	public function beforeRender(){
 		parent::beforeRender();
-		$this->template->today = new \DateTime();
-		$this->template->working = $this->context->parameters['working'];
+	}
+	
+	protected function loadConfig(){
+		$data = $this->context->getService("dibi")->query("SELECT * FROM ski_config")->fetchAll();
+		
+		libxml_use_internal_errors(true);
+		$parser = xml_parser_create();
+		xml_parser_set_option($parser, XML_OPTION_CASE_FOLDING, 0);
+		xml_parser_set_option($parser, XML_OPTION_SKIP_WHITE, 1);
+
+		foreach($data as $item){
+			$isxml = simplexml_load_string($item->value);
+			if($isxml){
+				xml_parse_into_struct($parser, $item->value, $values, $tags);
+				xml_parser_free($parser);
+				$obj = new \stdClass();
+				foreach($values as $val){
+					if($val['level'] > 1){
+						$obj->{$val['tag']} = !empty($val['value']) ? $val['value'] : null;
+					}
+				}
+				$item->value = $obj;
+			}
+			$this->config[$item->name] = $item;
+		}
+		\Tracy\Debugger::barDump($this->config);
 	}
 
 	/**

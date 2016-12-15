@@ -1,10 +1,32 @@
 {block title}Vítejte!{/block}
 {block content}
 
+	<div class="box actual hidden">
+		<h2 class="header">Aktuálně</h2>
+		<div class="padding15">
+			<h3>Zpráva pro členy Lyžařského sportovního klubu Volary, z.s.</h3>
+			<p>&nbsp;</p><p></p>
+			<h4>SKI Klub Vás zve na brigády na vleku:</h4>
+			<p></p>
+			<p>19.11.2016 (bude se dělat dřevo).</p>
+			<p></p>
+			<p>&nbsp;</p>
+			<h5>Brigády na vleku:</h5>
+			<p></p>
+			<p>15.10.2016 od 9 hodin</p>
+			<p>22.10.2016 od 9 hodin</p>
+			
+			<div class="cleaner"></div>
+		</div>
+	</div>
+	
 	<div class="box actual">
 		<h2 class="header">Aktuálně</h2>
 		<div class="padding15">
-			Pozor, ve <b>čtvrtek 18.února 2016 nebude areál v provozu</b>, kvůli odstávce proudu v Českých Žlebech.
+			<h3>Ještě o pár stupňů...</h3>
+			<p>klesnou teploty v přístím týdnu a budeme moci připravit sjezdovky na vánoce 2016.</p>
+			<p>Bílé vánoce Vám přeje Lyžařský sportovní klub Volary.</p>
+			<div class="cleaner"></div>
 		</div>
 	</div>
 	
@@ -38,10 +60,20 @@
 
 	<div class="row">
 		<div class="col-md-7">
-			<div class="box">
-				<h2 class="header">Počasí</h2>
+			<div class="box forecast">
+				<div class="header">
+					<h2>Počasí</h2>
+					<div class="rightside small">
+						Weather forecast from <a href="http://yr.no" target="_blank">Yr</a>, delivered by the Norwegian Meteorological Institute and NRK.
+					</div>
+				</div>
 				<div class="padding15">
-					<iframe src="/forecast/yr.php" width="100%" height="500"></iframe>
+					<!-- <iframe src="/forecast/yr.php" width="100%" height="500"></iframe> -->
+					<a href="http://www.yr.no/place/Czech_Republic/South_Bohemia/%C4%8Cesk%C3%A9_%C5%BDleby/" target="_blank">
+						{cache expire => '10 minutes'} {* picovina, musim obrazek ukladat *}
+						<img src="http://www.yr.no/place/Czech_Republic/South_Bohemia/%C4%8Cesk%C3%A9_%C5%BDleby/avansert_meteogram.png" />
+						{/cache}
+					</a>
 				</div>
 			</div>
 		</div>

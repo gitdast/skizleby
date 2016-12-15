@@ -59,9 +59,14 @@ class WebcamPresenter extends BasePresenter{
 	}
 	
 	public function createThumbnail($file){
-		$image = Image::fromFile(self::PATH . $file);
-		$image->resize(null, 90);
-		$image->save(self::PATH . 'thumbs/' . $file, 80, Image::JPEG);
+		try{
+			$image = Image::fromFile(self::PATH . $file);
+			$image->resize(null, 90);
+			$image->save(self::PATH . 'thumbs/' . $file, 80, Image::JPEG);
+		}
+		catch(\Exception $e){
+			\Tracy\Debugger::log($e->getMessage(), "error");
+		}
 	}
 	
 	static public function getRecentImage()	{

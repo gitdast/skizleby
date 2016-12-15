@@ -35,6 +35,12 @@ h4{
 .italic{
 	font-style:italic;
 }
+.small{
+	font-size: 11px;
+}
+.big{
+	font-size: 24px;
+}
 .middle{
 	vertical-align: middle;
 }
@@ -49,6 +55,12 @@ h4{
 }
 .clearL{
 	clear:left;
+}
+.rightside{
+	float:right;
+}
+.leftside{
+	float: left;
 }
 .hidden{
 	display:none;
@@ -106,11 +118,30 @@ h4{
 	opacity:0.25;
 }
 
-/*** UI ***/
+/*** reset & bootstrap reset ***/
 
 table td, table th{
 	padding:4px 8px;
+	vertical-align: middle;
 }
+table.auto{
+	width:auto;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+	vertical-align: middle;
+}
+.table > thead > tr:first-child > th,
+.table > tbody > tr:first-child > th,
+.table > thead > tr:first-child > td,
+.table > tbody > tr:first-child > td{
+	border-top:none;
+}
+
+input[type="radio"], input[type="checkbox"]{
+	margin-top:0px;
+}
+
+/*** UI ***/
 
 /* close anchor */
 a.close{
@@ -126,7 +157,10 @@ a.close.rightside{
 }
 
 /* flash messages */
-.msgCont{}
+.msgCont{
+	position:relative;
+	top:-30px;
+}
 .msgCont .flash{
 	padding:15px;
 	font-size:15px;
@@ -195,6 +229,9 @@ a.close.rightside{
 	margin-bottom: 30px;
 	box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
 }
+.box .header h1, .box .header h2, .box .header h3, .box .header h4{
+	margin:0px;
+}
 .box > .header, .box > h1, .box > h2, .box > h3, .box > h4{
 	background-color:#204d74;
 	position:relative;
@@ -231,8 +268,20 @@ a.close.rightside{
 	max-width: 100%;
 }
 
+.forecast img{
+	max-width: 100%;
+}
+
 .box.actual{
 	min-height: auto;
+	font-size: 15px;
+}
+.box.actual .image{
+	max-width:17%;
+}
+.box.actual .image img{
+	max-width:100%;
+	max-height:100%;
 }
 
 /* webcam */

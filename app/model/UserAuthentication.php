@@ -28,7 +28,7 @@ class UserAuthentication extends Nette\Object implements Nette\Security\IAuthent
 	 */
 	public function authenticate(array $credentials) {
 		list($username, $password) = $credentials;
-	\Tracy\Debugger::log(Passwords::hash($password));
+		//\Tracy\Debugger::log(Passwords::hash($password));
 		$row = $this->connection->query("SELECT * FROM ski_users WHERE username = %s", $username)->fetch();
 
 		if (!$row) {
@@ -46,6 +46,7 @@ class UserAuthentication extends Nette\Object implements Nette\Security\IAuthent
 
 		unset($row->password);
 		return new Nette\Security\Identity($row->id, $row->role, (array) $row);
+		
 	}
 
 	/**

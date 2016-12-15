@@ -13,7 +13,7 @@
 	<title>{ifset title}{include title|striptags} | {/ifset}skizleby.cz</title>
 	
 	<link rel="stylesheet" type="text/css" href="{$basePath}/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="{$basePath}/css/basic.css">
+	<link rel="stylesheet" type="text/css" href="{$basePath}/css/basic.css?{rand()}">
 	<link rel="stylesheet" type="text/css" href="https://code.cdn.mozilla.net/fonts/fira.css">
 	
 	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
@@ -46,20 +46,18 @@
 		</div>
 	</div>
 	
-	<div id="page" class="{$layout}">
-		
-		<div class="msgCont">
-			<div n:foreach="$flashes as $flash" class="flash {$flash->type}">
-				<a class="fontello close" onclick="javascript:document.getElementById('msgCont').removeChild(this.parentNode)">d</a>
-				<div class="fixed">{$flash->message}</div>
-			</div>
-			{block msgCont}{/block}
+	<div class="msgCont" id="msgCont">
+		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">
+			<a class="fontello close" onclick="javascript:document.getElementById('msgCont').removeChild(this.parentNode)">x</a>
+			<div class="fixed">{$flash->message}</div>
 		</div>
+		{block msgCont}{/block}
+	</div>
 		
+	<div id="page" class="{$layout}">
 		<div class="content {strtolower($presenter->name)}">
 			{include content}
 		</div>
-	
 	</div>
 		
 	<div id="footer">

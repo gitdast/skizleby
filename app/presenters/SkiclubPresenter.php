@@ -6,7 +6,21 @@ use \Nette\Application\UI\Form;
 class SkiclubPresenter extends BasePresenter{
 
 	public function renderDefault()	{
-		
+		$this->template->working = $this->config['working']->value === 'true';
+	}
+	
+	public function renderLogout(){
+		$user = $this->getUser();
+		if($user->isLoggedIn()){
+			$user->logout(TRUE);
+		}
+		$this->redirect("default");
+	}
+	
+	public function handleSaveWorking($working){
+		$this->context->getService("dibi")->query("UPDATE ski_config SET value = %s WHERE name = %s", (string)$working, "working");
+		$this->flashMessage("Nastavení uloženo", "success");
+		$this->redirect("this");
 	}
 	
 	public function createComponentLoginForm() {
@@ -21,7 +35,7 @@ class SkiclubPresenter extends BasePresenter{
 			->addRule(Form::FILLED, 'Vyplňte heslo.')
 			->setAttribute('placeholder', "Heslo");
 
-		$form->addSubmit('login', 'Přihlásit')->setAttribute("class", "pull-right");
+		$form->addSubmit('login', 'Přihlásit')->setAttribute("class", "pull-right btn btn-info");
 
 		$form->onSuccess[] = array($this, 'loginFormSubmitted');
 		return $form;
@@ -36,9 +50,9 @@ class SkiclubPresenter extends BasePresenter{
 				$this->getUser()->login($username, $password, false);
 			    $logoutTime = isset($this->context->parameters->logoutTime) ? $this->context->parameters->logoutTime : "+120 minutes";
 				if($this->getUser()->isLoggedIn()) $this->getUser()->setExpiration($logoutTime, TRUE, TRUE);
-				$this->flashMessage("Login OK", 'success');
+				//$this->flashMessage("Login OK", 'success');
 			}
-			catch (Nette\Security\AuthenticationException $e) {
+			catch (\Nette\Security\AuthenticationException $e) {
 				if($e->getCode()==1){
 					$this->flashMessage("Neplatné uživatelské jméno", 'error');
 				}
