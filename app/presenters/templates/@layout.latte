@@ -33,12 +33,19 @@
 				</button>
 				<a class="logo" n:href="Homepage:default"><img src="/images/skier1.gif" /></a>
 			</div>
+			<div class="pull-left workingInfo">
+				<div class='pull-left text-muted workingStatus'>Dnes, {$today|date:'d.m.Y'}:&nbsp;&nbsp;</div>
+				<div n:if='$working' class='pull-left text-success workingStatus'>v provozu.</div>
+				<div n:if='!$working' class='pull-left text-danger workingStatus'>mimo provoz.</div>				
+				<div class="cleaner"></div>
+			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="{if $presenter->name == 'Homepage'}active{/if}"><a n:href="Homepage:default">Home</a></li>
 					<li class="{if $presenter->name == 'Map'}active{/if}"><a n:href="Map:default">Mapa areálu</a></li>
 					<li class="{if $presenter->name == 'Prices'}active{/if}"><a n:href="Prices:default">Ceník</a></li>
 					<li class="{if $presenter->name == 'Webcam'}active{/if}"><a n:href="Webcam:default">Webkamera</a></li>
+					<li class="{if $presenter->name == 'Accommodation'}active{/if}"><a n:href="Accommodation:default">Ubytování</a></li>
 					<li class="{if $presenter->name == 'Galleries'}active{/if}"><a n:href="Galleries:default">Fotogalerie</a></li>
 					<li class="{if $presenter->name == 'Skiclub'}active{/if}"><a n:href="Skiclub:default">Skiclub</a></li>
 				</ul>
@@ -58,11 +65,12 @@
 		<div class="content {strtolower($presenter->name)}">
 			{include content}
 		</div>
+		<div id="footerSpace"></div>
 	</div>
-		
+	
 	<div id="footer">
 		<div class="container">
-			<div class="pull-left">Kontakt: tel - 723 510 041, <a href="" id="mailtoInfo"></a></div>
+			<div class="pull-left">Kontakt: tel - 602 686 433, <a href="" id="mailtoInfo"></a></div>
 			<div class="pull-right">webmaster: <a href="" id="mailtoAdmin">{* this is filled by js *}</a></div>
 			<div class="cleaner"></div>
 		</div>

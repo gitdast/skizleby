@@ -1,0 +1,17 @@
+
+{foreach $scripts as $script}
+	<script type="text/javascript" src="{$script['path']}{$script['name']}"></script>
+{/foreach}
+
+{foreach  $cssStyles as $style}
+	<link rel="stylesheet" type="text/css" href="{$style['path']}{$style['name']}" />
+{/foreach}
+
+<script type="text/javascript">
+	if(document.documentMode === 11){
+		var head = document.head, link = document.createElement('link');
+		link.type = 'text/css'; link.rel = 'stylesheet'; link.href = {$cdnBasePath} + '/css/ie.css';
+		head.appendChild(link);
+	}
+</script>
+      

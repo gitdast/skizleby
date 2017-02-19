@@ -1,0 +1,32 @@
+{extends ../@layout.latte}
+
+{block title}Skiclub{/block}
+{block content}
+	
+	<div class="box skiclub">
+		<h1 class="header bggrey">Skiclub</h1>
+		<div clas
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="padding15 pull-right" n:if="!$user->isLoggedIn()">
+					{control loginForm}
+				</div>
+
+				<div class="userMenu" n:if="$user->isLoggedIn()">
+					<a n:href="logout" class="btn btn-primary pull-right">Odhlásit</a>
+					<a n:href="profile" class="btn btn-default pull-right">Profil <i>{$user->identity->username}</i></a>
+					<a n:href="default" class="btn btn-default">Dokumenty</a>
+					<a n:href="settings" class="btn btn-default" n:if="$user->isInRole('manager') || $user->isInRole('admin')">Nastavení</a>
+				</div>
+			</div>
+		</div>
+		
+		<div n:if="$user->isLoggedIn()">
+		{block club}
+
+		{/block}
+		</div>
+		
+	</div>
+	
+{/block}

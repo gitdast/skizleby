@@ -13,6 +13,8 @@ abstract class BasePresenter extends \Nette\Application\UI\Presenter{
 	
 	public function beforeRender(){
 		parent::beforeRender();
+		$this->template->today = new \DateTime();
+		$this->template->working = $this->config['working']->value === 'true';
 	}
 	
 	protected function loadConfig(){
@@ -40,10 +42,7 @@ abstract class BasePresenter extends \Nette\Application\UI\Presenter{
 		}
 		\Tracy\Debugger::barDump($this->config);
 	}
-
-	/**
-	* Setting javascripts files common for all presenters
-	*/
+	
 	protected function setDefaultScripts(){
 		$this->template->scripts = array();
 		$this->presentername = substr($this->name, strrpos(':' . $this->name, ':'));
@@ -60,5 +59,30 @@ abstract class BasePresenter extends \Nette\Application\UI\Presenter{
 			}
 		}
 		catch(\Exception $e){}
+	}
+
+	protected function removeScript($name){
+		if(isset($this->template->scripts[$name])){
+	    	unset($this->template->scripts[$name]);
+		}
+	}
+
+	protected function removeStyle($name){
+		if(isset($this->template->cssStyles[$name])){
+			unset($this->template->cssStyles[$name]);
+		}
+	}
+
+	protected function addScript($name, $dir = ""){
+		$cdnBasePath = "";
+		
+		if(empty($dir))
+			$path = $cdnBasePath . "/js/";
+		elseif(strpos($dir, "http") === false)
+			$path = $cdnBasePath . $dir;
+		else
+			$path = $dir;
+		
+		$this->template->scripts[$name] = array("dir" => $dir, "name" => $name);
 	}
 }

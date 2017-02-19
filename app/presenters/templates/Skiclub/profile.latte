@@ -1,0 +1,20 @@
+
+{block club}
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<div class="padding15">
+				<h2>Profil uživatele</h2>
+				<table class="table auto">
+					<tr>
+						<th>uživ. jméno</th>
+						<td colspan="3">{$user->identity->username}</td>
+					</tr>
+				</table>
+					
+				{control changePasswordForm}
+			</div>
+		</div>
+	</div>
+
+{/block}

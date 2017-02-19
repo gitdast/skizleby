@@ -1,0 +1,20 @@
+
+{block club}
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="padding15" n:if="$user->isLoggedIn()">
+				<h2>Nastavení</h2>
+				<table class="table auto">
+					<tr class="working">
+						<th>areál v provozu</th>
+						<td><input name="working" class="" type="checkbox" value="{$working}" {if $working}checked{/if} />
+						<td><a n:href="SaveWorking!" class="btn btn-info btn-sm ajax">Uložit</a></td>
+						<td> ...nastaví, jestli se na homepage zobrazí "v provozu" nebo "mimo provoz"</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+{/block}

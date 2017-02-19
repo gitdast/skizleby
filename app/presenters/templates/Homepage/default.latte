@@ -1,41 +1,34 @@
 {block title}Vítejte!{/block}
 {block content}
 
-	<div class="box actual hidden">
-		<h2 class="header">Aktuálně</h2>
-		<div class="padding15">
-			<h3>Zpráva pro členy Lyžařského sportovního klubu Volary, z.s.</h3>
-			<p>&nbsp;</p><p></p>
-			<h4>SKI Klub Vás zve na brigády na vleku:</h4>
-			<p></p>
-			<p>19.11.2016 (bude se dělat dřevo).</p>
-			<p></p>
-			<p>&nbsp;</p>
-			<h5>Brigády na vleku:</h5>
-			<p></p>
-			<p>15.10.2016 od 9 hodin</p>
-			<p>22.10.2016 od 9 hodin</p>
-			
-			<div class="cleaner"></div>
-		</div>
-	</div>
-	
 	<div class="box actual">
 		<h2 class="header">Aktuálně</h2>
 		<div class="padding15">
-			<h3>Ještě o pár stupňů...</h3>
-			<p>klesnou teploty v přístím týdnu a budeme moci připravit sjezdovky na vánoce 2016.</p>
-			<p>Bílé vánoce Vám přeje Lyžařský sportovní klub Volary.</p>
+			<p><b>Provozní doba skiareálu v únoru 2017</b></p>
+			<p>
+				<div class='pull-left text-muted workingStatus'>Dnes, {$today|date:'d.m.Y'}:&nbsp;&nbsp;</div>
+				<div n:if='$working' class='pull-left text-success workingStatus'>v provozu.</div>
+				<div n:if='!$working' class='pull-left text-danger workingStatus'>mimo provoz.</div>				
+				<div class="cleaner"></div>
+			</p>
+			<p>V únoru je skiareál v provozu <b>každý den</b>, všechny tratě, snowpark, vlek č.1.</p>
+			<p>Pokud máte zájem o bližší informace, ozvěte se na <b>tel. číslo 602 686 433</b> nebo <b>email info@skizleby.cz.</b></p>
+			
+			<br>
+			<p>Těšíme se na Vaši návštěvu.</p>
 			<div class="cleaner"></div>
 		</div>
 	</div>
 	
 	<div class="box">
-		<h1 class="header">Ski areál České Žleby
+		<h1 class="header">
+			Ski areál České Žleby
+			<div class="hidden">
 			<div n:if='$working' class='pull-right text-success workingStatus'>v provozu.</div>
 			<div n:if='!$working' class='pull-right text-danger workingStatus'>mimo provoz.</div>
 			<div class='pull-right text-muted workingStatus'>Dnes, {$today|date:'d.m.Y'}:&nbsp;&nbsp;</div>
 			<div class="cleaner"></div>
+			</div>
 		</h1>
 		<div class="row">
 			<div class="col-md-8">
@@ -45,14 +38,48 @@
 					Lyžování pro rodiny s dětmi.<br/>
 					Délka vleků 380 a 390m – kapacita 650 osob/h. Délka sjezdovek 400 až 600m.
 					<br/><br/>
-					<b>Buffet otevřen.</b> Z nabídky: gulášovka, párky, nápoje…
+					<b>Buffet otevřen každý den</b>, nezávisle na provozu vleku. 9:00 - 20:00 (14:00 - 20:00 ve dnech, kdy se nejezdí)<br>
+					<b>Z nabídky:</b> bramboračka, klobásy, masová topinka, točené - kozel 11°, nealko…
 					<br/><br/>
-					<b>Další služby:</b> půjčovna lyžařského vybavení, tel: 723 510 041.
+					<b>Půjčovna lyžařského vybavení:</b> tel: 723 510 041.<br/>
+					(pro sjezd, snowboard, běh)
 				</div>
 			</div>
 			<div class="col-md-4 map">
 				<div class="padding15">
 					<a n:href="Map:default"><img src="/images/areal_cleared.jpg" height="250" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="box pohar">
+		<h1 class="header">Básumský pohár 2017 - závody v obřím slalomu, VII. ročník</h1>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="padding15">
+					<p>Básumský pohár pokračuje v sobotu 11.února druhým kolem, a to tentokrát v Českých Žlebech.</p>
+					<p>Propozice:<br>
+					<a href="/upload/Bazumsky_pohar-propozice_2017.pdf">Bazumsky_pohar-propozice_2017.pdf</a>
+					</p>
+					
+					<p>Zahajovací kolo proběhlo za krásného, ač mrazivého počasí, 28.ledna v Horní Vltavici.<br>
+						Malí závodníci starovali v hojném počtu, <a href="/upload/BP_Horni_Vltavice_vysledky.pdf" target="_blank" class="bold">výsledky závodu ke stažení zde</a>.
+					</p>
+					
+					<p>Přijďte závodit nebo fandit!</p>
+				</div>
+			</div>
+			<div class="col-md-4 map">
+				<div class="padding15">
+					<p>Termíny:
+						<ul>
+							<li>28.ledna 2017 - Horní Vltavice</li>
+							<li>11.února 2017 - České Žleby</li>
+							<li>25.února 2017 - Strážný</li>
+							<li>11.března 2017 - Kubova Huť</li>
+						</ul>
+					</p>
 				</div>
 			</div>
 		</div>

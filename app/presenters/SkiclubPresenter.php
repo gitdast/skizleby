@@ -4,9 +4,16 @@ namespace FrontModule;
 use \Nette\Application\UI\Form;
 
 class SkiclubPresenter extends BasePresenter{
-
+	
 	public function renderDefault()	{
+	}
+	
+	public function renderSettings()	{
 		$this->template->working = $this->config['working']->value === 'true';
+	}
+	
+	public function renderProfile()	{
+		$this->addScript("netteForms.js");
 	}
 	
 	public function renderLogout(){
@@ -65,6 +72,10 @@ class SkiclubPresenter extends BasePresenter{
 			
 			$this->redirect("this");
 		}
+	}
+	
+	public function createComponentChangePasswordForm(){
+		return new \App\Forms\ChangePasswordForm($this->context->getByType('App\Model\UserAuthentication'), $this->user);
 	}
 	
 }

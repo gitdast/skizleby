@@ -1,4 +1,5 @@
 <?php
+define('WWW_DIR', __DIR__);
 
 if (!isset($_SERVER['argv'][2])) {
 	echo '
@@ -12,7 +13,7 @@ Usage: create-user.php <name> <password>
 list(, $name, $password) = $_SERVER['argv'];
 
 $container = require __DIR__ . '/../app/bootstrap.php';
-$manager = $container->getByType('App\Model\UserManager');
+$manager = $container->getByType('App\Model\UserAuthentication');
 
 try {
 	$manager->add($name, $password);
