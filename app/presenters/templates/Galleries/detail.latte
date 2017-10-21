@@ -1,0 +1,28 @@
+{block title}Galleries{/block}
+
+{block head}
+	{include #parent}
+	<link rel="stylesheet" type="text/css" href="{$basePath}/slick/slick.css" />
+{/block}
+
+{block content}
+	
+	<div class="box galleries detail">
+		<h1 class="header bggrey">Galleries</h1>
+		<div class="padding15">
+			<div class="back"><a n:href="default">&larr; Zpět na seznam</a></div>
+			<h3 class="textcenter">{$gallery->title}</h3>
+			<div class="row slickGallery">
+				<div class="col-xs-12">
+					<div class="display">
+						<div n:foreach="$gallery->images as $image"><img src="/{$image}" /></div>
+					</div>
+					<div class="thumbs">
+						<div n:foreach="$gallery->images as $image"><img src="/{$image}" /></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{/block}

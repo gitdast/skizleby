@@ -26,3 +26,4 @@ services:
 	router: App\RouterFactory::createRouter
 	dibi: \DibiConnection(%database%)
 	- App\Model\UserAuthentication(@dibi)
+	- App\Model\Galleries(@dibi)

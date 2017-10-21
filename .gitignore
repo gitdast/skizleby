@@ -5,3 +5,4 @@ temp
 !/app/config/config.neon
 /www/upload/webcam/*.jpg
 /www/upload/webcam/thumbs
+/www/upload/galleries
