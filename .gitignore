@@ -1,8 +1,13 @@
 log
-temp
+temp/*
+!temp/cache
+temp/cache/*
+!temp/sessions
+temp/sessions/*
 /app/config/devmode
 /app/config/*.neon
 !/app/config/config.neon
 /www/upload/webcam/*.jpg
-/www/upload/webcam/thumbs
+/www/upload/webcam/
+/www/upload/webcam_ukazky
 /www/upload/galleries
