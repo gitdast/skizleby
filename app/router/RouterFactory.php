@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Ski;
 
 use Nette;
 use Nette\Application\Routers\RouteList;

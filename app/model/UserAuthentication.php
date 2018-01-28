@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model;
+namespace Ski\Model;
 
 use Nette;
 use Nette\Security\Passwords;

@@ -9,13 +9,13 @@ use Nette\Security\User;
 
 class ChangePasswordForm extends Nette\Application\UI\Form {
 	
-	/** @var App\Model\UserAuthentication */
+	/** @var \Ski\Model\UserAuthentication */
 	private $model;
 	
-	/** @var Nette\Security\User */
+	/** @var \Nette\Security\User */
 	private $user;
 
-	public function __construct(\App\Model\UserAuthentication $model, Nette\Security\User $user){
+	public function __construct(\Ski\Model\UserAuthentication $model, Nette\Security\User $user){
 		$this->model = $model;
 		$this->user = $user;
 	}

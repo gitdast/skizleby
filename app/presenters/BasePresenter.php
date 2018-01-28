@@ -1,5 +1,5 @@
 <?php
-namespace FrontModule;
+namespace Ski;
 
 abstract class BasePresenter extends \Nette\Application\UI\Presenter{
 	public $presentername;

@@ -1,5 +1,5 @@
 <?php
-namespace FrontModule;
+namespace Ski;
 
 class PricesPresenter extends BasePresenter{
 

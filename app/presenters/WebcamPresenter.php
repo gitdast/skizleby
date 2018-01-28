@@ -1,5 +1,5 @@
 <?php
-namespace FrontModule;
+namespace Ski;
 
 use Tracy\Debugger;
 use Nette\Utils\Image;

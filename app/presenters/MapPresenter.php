@@ -1,5 +1,5 @@
 <?php
-namespace FrontModule;
+namespace Ski;
 
 class MapPresenter extends BasePresenter{
 

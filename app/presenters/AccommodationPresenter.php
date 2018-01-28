@@ -1,5 +1,5 @@
 <?php
-namespace FrontModule;
+namespace Ski;
 
 class AccommodationPresenter extends BasePresenter{
 

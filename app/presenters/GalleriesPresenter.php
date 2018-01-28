@@ -1,14 +1,14 @@
 <?php
-namespace FrontModule;
+namespace Ski;
 
 class GalleriesPresenter extends BasePresenter{
 	
-	/** @var \App\Model\Galleries */
+	/** @var \Ski\Model\Galleries */
 	private $galleries;
 	
 	const GALL_DIR = "upload/galleries/";
 	
-	public function __construct(\App\Model\Galleries $galleries){
+	public function __construct(\Ski\Model\Galleries $galleries){
 		parent::__construct();
 		
 		$this->galleries = $galleries;

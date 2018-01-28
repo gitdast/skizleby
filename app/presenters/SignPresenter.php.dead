@@ -1,5 +1,5 @@
 <?php
-namespace FrontModule;
+namespace Ski;
 
 use Nette;
 use App\Forms\SignFormFactory;
