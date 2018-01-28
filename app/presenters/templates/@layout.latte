@@ -33,7 +33,7 @@
 				</button>
 				<a class="logo" n:href="Homepage:default"><img src="/images/skier1.gif" /></a>
 			</div>
-			<div class="pull-left workingInfo">
+			<div class="pull-left workingInfo" n:if="isset($displayStatusInHeader)">
 				<div class='pull-left text-muted workingStatus'>Dnes, {$today|date:'d.m.Y'}:&nbsp;&nbsp;</div>
 				<div n:if='$working' class='pull-left text-success workingStatus'>v provozu.</div>
 				<div n:if='!$working' class='pull-left text-danger workingStatus'>mimo provoz.</div>				

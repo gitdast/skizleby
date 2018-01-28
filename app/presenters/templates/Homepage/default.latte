@@ -5,12 +5,12 @@
 		<h2 class="header">Aktuálně</h2>
 		<div class="padding15">
 			<p><b>Sezóna 2017/2018</b></p>
-			<p>
+			<div class="mb15" n:if="isset($displayStatusInPagebody)">
 				<div class='pull-left text-muted workingStatus'>Dnes, {$today|date:'d.m.Y'}:&nbsp;&nbsp;</div>
 				<div n:if='$working' class='pull-left text-success workingStatus'>v provozu.</div>
 				<div n:if='!$working' class='pull-left text-danger workingStatus'>mimo provoz.</div>				
 				<div class="cleaner"></div>
-			</p>
+			</div>
 			<div>
 				Milí lyžaři, <br>tradičně 26.12.2017 v Českých Žlebech začala sezóna. Pokud sněhové podmínky dovolí, jsou upravované všechny sjezdovky.<br>
 				<div class="row">
