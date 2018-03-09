@@ -9,5 +9,6 @@ temp/sessions/*
 !/app/config/config.neon
 /www/upload/webcam/*.jpg
 /www/upload/webcam/
-/www/upload/webcam_ukazky
+www/upload/webcam_ukazky
+www/upload/webcam_ukazky/*
 /www/upload/galleries
