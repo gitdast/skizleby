@@ -1,0 +1,12 @@
+{
+    "name": "skizleby",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "dibi/dibi": "3.0.5",
+        "nette/nette": "v2.4.0",
+        "nette/utils": "^2.4",
+        "tharos/schematic": "^1.2",
+        "myclabs/php-enum": "^1.5"
+    }
+}

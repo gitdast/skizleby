@@ -373,6 +373,15 @@ a.close.rightside{
 }
 
 /*** skiklub ***/
+.skiclub .login .links{
+	text-align: right;
+	padding:8px;
+}
+.skiclub .login .links a{
+	display:block;
+	margin-bottom: 15px;
+}
+
 .skiclub .userMenu{
 	padding:10px 2%;
 	overflow: auto;
