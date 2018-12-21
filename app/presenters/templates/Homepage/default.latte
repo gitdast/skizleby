@@ -1,4 +1,10 @@
 {block title}Vítejte!{/block}
+
+{block head}
+	{include #parent}
+	<link rel="stylesheet" type="text/css" href="{$basePath}/slick/slick.css" />
+{/block}
+
 {block content}
 
 	<div class="box actual">
@@ -11,57 +17,44 @@
 				<div class="cleaner"></div>
 			</div>
 			<div>
-				<div class="row mt30">
+				<div class="row">
 					<div class="col-xs-12">
-						<h2>Informace pro členy klubu - brigáda</h2>
+						<h2>Start nové sezóny 2018/2019 už se blíží!</h2>
 						<p>
-							V sobotu, 1. prosince 2018 bude v areálu členská brigáda.<br>
-							Od 9 hodin, v areálu v Českých Žlebech.<br>
-							Kdo by se potřeboval domluvit na odvozu, ozvěte se telefonicky.
+							Střídavě příznivé sněhové podmínky zvěstují začátek nové sezóny i ve skiareálu v Českých Žlebech.<br>
+							Pokud se letošní Vánoce udrží bílé, <b>rozjede se vlek poprvé 26. prosince</b>.<br>
+							Snad blátivá varianta Vánoc nenastane a sejdeme se k první letošní žlebské jízdě.
+						</p>
+						<p class="">
+							Na podzim jsme nelenili a letos naleznete například zrekonstruované sociální zařízení.<br>
+							<div class="row thumbs">
+								<div class="col-xs-12 col-sm-6 col-lg-3">
+									<a href="images/rek2018/klubovna.jpg" target="_blank"><img src="images/rek2018/klubovna_tmb.jpg" /></a>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-lg-3">
+									<a href="images/rek2018/chodba.jpg" target="_blank"><img src="images/rek2018/chodba_tmb.jpg" /></a>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-lg-3">
+									<a href="images/rek2018/zachod1.jpg" target="_blank"><img src="images/rek2018/zachod1_tmb.jpg" /></a>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-lg-3">
+									<a href="images/rek2018/zachod2.jpg" target="_blank"><img src="images/rek2018/zachod2_tmb.jpg" /></a>
+								</div>
+							</div>
+						</p>
+						<p>
+							V areálu můžete využít WiFi připojení a tak ušetřit Vaše data třeba při sdílení lyžařských momentek na Instagram ;).
+						</p>
+						<p>
+							Klubový buffet pokračuje jako v loňském roce.
+						</p>
+
+						<p>
+							Brzy na viděnou,
 						</p>
 
 						<p>Sportovní klub Volary.</p>
 						<div class="cleaner"></div>
-					</div>
-				</div>
-				<br>
-				<div class="row mt30">
-					<div class="col-xs-12 col-md-6">
-						<h2>Maškarní karneval na sněhu</h2>
-						<p>
-							Tradičně ke konci sezóny si Vás dovolujeme pozvat na Maškarní karneval ve skiareálu České Žleby.<br>
-							Koná se v sobotu 3. března 2018, od 12 hodin.<br>
-							Čekají Vás dovednostní soutěže, soutěž masek, společná jízda a další zábava.
-						</p>
-						<br>
-						Těšíme se na Vaši návštěvu.
-						<br><br><br>
-						
-						<p>S pozdravem,<br>Sportovní klub Volary.</p>
-						<div class="cleaner"></div>
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="padding30">
-							<a href="upload/Plakat_karneval_2018.pdf" target="_blank"><img src="images\karneval_plakat_thmb.png" style="max-width: 100%; max-height:250px;"/></a>
-						</div>
-					</div>
-				</div>
-				<br>
-				<div class="row mt30">
-					<div class="col-xs-12 col-md-6">
-						<h3>Bázumský pohár 2018</h3>
-						<p>
-							Letošní ročník tradičního slalomového seriálu pro děti zahájil 20.1. na Kubově Huti.<br>
-							Že jste ho nestihli? Nevadí, další kolo proběhne v sobotu 27.1. ve Strážném a
-							další kolo 10.2. u nás, v Českých Žlebech.<br>
-							<a href="upload/BP-2018-plakat.pdf" target="_blank">Propozice závodů ZDE</a>
-						</p>
-						<br>
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="padding30">
-							<img src="images\bp-kb-2018.jpg" style="max-width: 100%; max-height:200px;"/>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -166,6 +159,53 @@
 				<h2 class="header">Webcamera</h2>
 				<div class="padding15">
 					<img src="/upload/webcam/{$recentImage}" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="box actual">
+		<h2 class="header">Z minulé sezóny</h2>
+		<div class="padding15">
+			<div>
+				<div class="row mt30">
+					<div class="col-xs-12 col-md-6">
+						<h2>Maškarní karneval na sněhu</h2>
+						<p>
+							Tradičně ke konci sezóny si Vás dovolujeme pozvat na Maškarní karneval ve skiareálu České Žleby.<br>
+							Koná se v sobotu 3. března 2018, od 12 hodin.<br>
+							Čekají Vás dovednostní soutěže, soutěž masek, společná jízda a další zábava.
+						</p>
+						<br>
+						Těšíme se na Vaši návštěvu.
+						<br><br><br>
+
+						<p>S pozdravem,<br>Sportovní klub Volary.</p>
+						<div class="cleaner"></div>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="padding30">
+							<a href="upload/Plakat_karneval_2018.pdf" target="_blank"><img src="images\karneval_plakat_thmb.png" style="max-width: 100%; max-height:250px;"/></a>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="row mt30">
+					<div class="col-xs-12 col-md-6">
+						<h3>Bázumský pohár 2018</h3>
+						<p>
+							Letošní ročník tradičního slalomového seriálu pro děti zahájil 20.1. na Kubově Huti.<br>
+							Že jste ho nestihli? Nevadí, další kolo proběhne v sobotu 27.1. ve Strážném a
+							další kolo 10.2. u nás, v Českých Žlebech.<br>
+							<a href="upload/BP-2018-plakat.pdf" target="_blank">Propozice závodů ZDE</a>
+						</p>
+						<br>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="padding30">
+							<img src="images\bp-kb-2018.jpg" style="max-width: 100%; max-height:200px;"/>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

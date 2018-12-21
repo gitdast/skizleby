@@ -333,6 +333,13 @@ a.close.rightside{
 .homepage h4{
 	line-height: 1.4;
 }
+.homepage .actual .thumbs {
+	text-align: center;
+}
+.homepage .actual .thumbs img{
+	max-width: 100%;
+	margin-bottom: 15px;
+}
 
 .homepage .map img{
 	max-height:250px;
