@@ -330,6 +330,10 @@ a.close.rightside{
 
 /* homepage */
 
+.homepage h4{
+	line-height: 1.4;
+}
+
 .homepage .map img{
 	max-height:250px;
 	max-width:100%;
