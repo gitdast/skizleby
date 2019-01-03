@@ -330,6 +330,11 @@ a.close.rightside{
 
 /* homepage */
 
+.homepage .date{
+	margin: 30px 0px -10px;
+	color: #4f4f4f;
+	font-size: 13px;
+}
 .homepage h4{
 	line-height: 1.4;
 }
